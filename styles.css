@@ -66,12 +66,22 @@ main,
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   text-decoration: none;
   color: var(--ink);
   font-family: "Bricolage Grotesque", "Sora", sans-serif;
   font-size: clamp(1.25rem, 2vw, 1.6rem);
   font-weight: 800;
   letter-spacing: -0.02em;
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
 }
 
 .top-nav {
