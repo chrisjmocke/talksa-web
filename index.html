@@ -1,62 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Let's Talk – Scheduled Maintenance</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-image: url('assets/letstalkmainblack.png');
-            background-size: cover;
-            background-position: center;
-            background-color: #000000;
-            color: #e0e0e0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-        .overlay {
-            background-color: rgba(0, 0, 0, 0.85);
-            padding: 40px 20px;
-            border-radius: 12px;
-            max-width: 480px;
-            width: 90%;
-            box-sizing: border-box;
-        }
-        h1 {
-            font-size: 24px;
-            color: #ffffff;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
-        p {
-            font-size: 15px;
-            color: #9e9e9e;
-            line-height: 1.5;
-            margin-bottom: 24px;
-        }
-        .badge {
-            display: inline-block;
-            background-color: #1e1e1e;
-            border: 1px solid #333;
-            color: #4caf50;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 500;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Let's Talk | Voice-First Translation for South African Languages (APK Download)</title>
+  <meta name="title" content="Let's Talk | Voice-First Translation for South African Languages (APK Download)">
+  <meta name="description" content="Translate speech and text instantly between South African indigenous languages (Sepedi, Xitsonga, Tshivenda, Sesotho, isiNdebele, Afrikaans) and global languages using advanced Gemini and Narakeet TTS.">
+  <meta name="keywords" content="Let's Talk App, South African translation app, Sepedi translator, Xitsonga translation, Tshivenda text to speech, South African languages, Sesotho translator, isiNdebele voice app, Narakeet South Africa TTS, Gemini translation, African voice translation">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="rating" content="General">
+  <meta name="author" content="Limpopo Voice">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.talksa.co.za/">
+  <meta property="og:title" content="Let's Talk | Voice-First Translation for South African Languages (APK Download)">
+  <meta property="og:description" content="Break language barriers in South Africa! Speak or type to instantly translate and hear native voice text-to-speech in Sepedi, Xitsonga, Tshivenda, Afrikaans, and more.">
+  <meta property="og:image" content="https://www.talksa.co.za/assets/images/limpopo_voice_og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Let's Talk App">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://www.talksa.co.za/">
+  <meta name="twitter:title" content="Let's Talk | Voice-First Translation for South African Languages (APK Download)">
+  <meta name="twitter:description" content="Instantly translate and listen to indigenous South African languages like Sepedi, Xitsonga, Tshivenda, Sesotho, and Afrikaans using state-of-the-art TTS.">
+  <meta name="twitter:image" content="https://www.talksa.co.za/assets/images/limpopo_voice_og.png">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="overlay">
-        <h1>We're Upgrading Let's Talk</h1>
-        <p>Our backend systems are currently undergoing scheduled maintenance and updates to bring you an improved experience. The app and web service will be back online shortly.</p>
-        <div class="badge">Maintenance in Progress</div>
-    </div>
+  <div class="maintenance-shell">
+    <div class="maintenance-banner">UNDER MAINTENANCE</div>
+
+    <main class="maintenance-card" role="status" aria-live="polite">
+      <div class="brand-lockup">
+        <span class="brand-dot"></span>
+        <span class="brand-name">Let’s Talk</span>
+      </div>
+
+      <h1>We’re updating the site.</h1>
+      <p class="subtitle">This page is temporarily under maintenance while we improve the app experience and deployment.</p>
+
+      <div class="status-box">
+        <p><strong>Status:</strong> Scheduled maintenance in progress</p>
+        <p><strong>Expected return:</strong> We’ll be back shortly</p>
+      </div>
+
+      <div class="contact-block">
+        <p>For support or updates, contact:</p>
+        <a href="mailto:letstalktranslate@gmail.com">letstalktranslate@gmail.com</a>
+      </div>
+    </main>
+  </div>
+
+  <style>
+    :root {
+      --bg-dark: #0b1020;
+      --bg-mid: #111b2e;
+      --accent: #f59e0b;
+      --accent-strong: #f97316;
+      --card: rgba(15, 23, 42, 0.86);
+      --line: rgba(148, 163, 184, 0.28);
+      --text: #e5eefb;
+      --muted: #bfd0ef;
+      --brand: #7dd3fc;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(circle at top, #1a2944 0%, var(--bg-dark) 35%, #070d1a 100%);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+    }
+
+    .maintenance-shell {
+      width: min(92vw, 760px);
+      text-align: center;
+    }
+
+    .maintenance-banner {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--accent-strong), var(--accent));
+      color: #111827;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.8rem 1.4rem;
+      border-radius: 999px;
+      box-shadow: 0 10px 24px rgba(249, 115, 22, 0.35);
+      margin-bottom: 1.5rem;
+      font-size: 0.78rem;
+    }
+
+    .maintenance-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 30px 60px rgba(2, 6, 23, 0.5);
+      backdrop-filter: blur(8px);
+    }
+
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 0.5rem 0.9rem;
+      border: 1px solid rgba(125, 211, 252, 0.35);
+      border-radius: 999px;
+      background: rgba(125, 211, 252, 0.08);
+      margin-bottom: 1rem;
+    }
+
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      background: var(--brand);
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(125, 211, 252, 0.9);
+    }
+
+    .brand-name {
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--brand);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    h1 {
+      margin: 0 0 0.9rem;
+      font-size: clamp(2.1rem, 4vw, 4rem);
+      line-height: 1.1;
+      letter-spacing: -0.05em;
+    }
+
+    .subtitle {
+      margin: 0 auto 1.5rem;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.6;
+    }
+
+    .status-box {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(148, 163, 184, 0.04);
+      padding: 1rem 1.2rem;
+      margin: 1.25rem auto 1.5rem;
+      max-width: 500px;
+    }
+
+    .status-box p {
+      margin: 0.45rem 0;
+      color: var(--text);
+    }
+
+    .contact-block {
+      margin-top: 0.75rem;
+      color: var(--muted);
+    }
+
+    .contact-block p {
+      margin: 0 0 0.45rem;
+    }
+
+    .contact-block a {
+      color: var(--brand);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .maintenance-card {
+        padding: 1.5rem 1rem;
+      }
+
+      .maintenance-banner {
+        letter-spacing: 0.1em;
+        font-size: 0.7rem;
+      }
+    }
+  </style>
 </body>
 </html>
