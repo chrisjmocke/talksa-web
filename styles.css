@@ -11,6 +11,8 @@
   --cream: #f7f5f0;
   --radius: 16px;
   --max: 1080px;
+  /* The app's own font: Android's monospace (Droid Sans Mono, now Noto Sans Mono). */
+  --font: "Noto Sans Mono", "Droid Sans Mono", ui-monospace, "Cascadia Mono", Menlo, Consolas, monospace;
 }
 
 * { box-sizing: border-box; }
@@ -21,7 +23,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font);
   font-size: 16px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -32,10 +34,10 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: var(--green-bright); }
 a:hover { color: #7fd682; }
 
-h1, h2, h3 { font-family: "Fraunces", Georgia, serif; font-weight: 700; line-height: 1.15; margin: 0 0 0.6em; }
-h1 { font-size: clamp(2.2rem, 6vw, 4rem); letter-spacing: -0.02em; }
-h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); letter-spacing: -0.01em; }
-h3 { font-size: 1.2rem; font-weight: 600; }
+h1, h2, h3 { font-family: var(--font); font-weight: 700; line-height: 1.15; margin: 0 0 0.6em; }
+h1 { font-size: clamp(1.9rem, 5.2vw, 3.4rem); letter-spacing: -0.03em; }
+h2 { font-size: clamp(1.5rem, 3.6vw, 2.2rem); letter-spacing: -0.02em; }
+h3 { font-size: 1.15rem; font-weight: 600; }
 p { margin: 0 0 1em; }
 
 /* Top bar */
@@ -84,7 +86,7 @@ main { padding: 0 16px; }
 .hero, .section { max-width: var(--max); margin: 0 auto; }
 
 .hero { padding: clamp(56px, 10vw, 112px) 0 clamp(48px, 8vw, 88px); text-align: center; }
-.hero h1 { max-width: 15ch; margin-left: auto; margin-right: auto; }
+.hero h1 { max-width: 19ch; margin-left: auto; margin-right: auto; }
 .eyebrow {
   display: inline-block;
   margin-bottom: 20px;
@@ -125,7 +127,7 @@ main { padding: 0 16px; }
 .split p { color: var(--muted); }
 
 /* Languages */
-.list-title { margin-top: 28px; font-family: "Montserrat", sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.list-title { margin-top: 28px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 .chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
 .chips li { padding: 10px 18px; border-radius: 999px; background: var(--cream); color: #1b1b1b; font-weight: 600; }
 .chips-alt li { background: transparent; color: var(--text); border: 1px solid var(--line); font-weight: 500; }
