@@ -9,6 +9,11 @@
   --green-bright: #5cbf60;
   --green-ink: #062a09;
   --cream: #f7f5f0;
+  --link-hover: #7fd682;
+  --topbar-bg: rgba(11, 13, 16, 0.92);
+  --chip-bg: var(--cream);
+  --chip-text: #1b1b1b;
+  --chip-border: transparent;
   --radius: 16px;
   --max: 1080px;
   /* The app's own font: Android's monospace (Droid Sans Mono, now Noto Sans Mono). */
@@ -32,7 +37,7 @@ body {
 img { max-width: 100%; height: auto; display: block; }
 
 a { color: var(--green-bright); }
-a:hover { color: #7fd682; }
+a:hover { color: var(--link-hover); }
 
 h1, h2, h3 { font-family: var(--font); font-weight: 700; line-height: 1.15; margin: 0 0 0.6em; }
 h1 { font-size: clamp(1.9rem, 5.2vw, 3.4rem); letter-spacing: -0.03em; }
@@ -50,7 +55,7 @@ p { margin: 0 0 1em; }
   justify-content: space-between;
   gap: 16px;
   padding: 12px max(16px, calc((100vw - var(--max)) / 2));
-  background: rgba(11, 13, 16, 0.92);
+  background: var(--topbar-bg);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -129,7 +134,7 @@ main { padding: 0 16px; }
 /* Languages */
 .list-title { margin-top: 28px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 .chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-.chips li { padding: 10px 18px; border-radius: 999px; background: var(--cream); color: #1b1b1b; font-weight: 600; }
+.chips li { padding: 10px 18px; border-radius: 999px; background: var(--chip-bg); color: var(--chip-text); border: 1px solid var(--chip-border); font-weight: 600; }
 .chips-alt li { background: transparent; color: var(--text); border: 1px solid var(--line); font-weight: 500; }
 
 /* Download */
@@ -193,9 +198,76 @@ details p { margin: 12px 0 0; color: var(--muted); }
 }
 
 /* Privacy policy page */
-.policy { max-width: 820px; }
+.policy { max-width: 820px; border-top: 0; }
 .policy h2 { font-size: clamp(1.2rem, 2.6vw, 1.5rem); margin-top: 1.6em; }
 .policy p, .policy li { color: var(--muted); }
 .policy strong { color: var(--text); }
 .policy ul { padding-left: 1.3em; margin: 0 0 1em; }
 .policy li { margin-bottom: 8px; }
+
+/* Light mode, matching the app's light background (#F7F5F0). It follows the
+   device setting unless the visitor picks a theme with the toggle. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+  --bg: #f7f5f0;
+  --bg-raised: #ece9e1;
+  --bg-card: #ffffff;
+  --line: #ddd8cc;
+  --text: #14171c;
+  --muted: #555c66;
+  --green-bright: #2e7d32;
+  --link-hover: #1b5e20;
+  --topbar-bg: rgba(247, 245, 240, 0.92);
+  --chip-bg: #ffffff;
+  --chip-text: #14171c;
+  --chip-border: #ddd8cc;  }
+}
+:root[data-theme="light"] {
+  --bg: #f7f5f0;
+  --bg-raised: #ece9e1;
+  --bg-card: #ffffff;
+  --line: #ddd8cc;
+  --text: #14171c;
+  --muted: #555c66;
+  --green-bright: #2e7d32;
+  --link-hover: #1b5e20;
+  --topbar-bg: rgba(247, 245, 240, 0.92);
+  --chip-bg: #ffffff;
+  --chip-text: #14171c;
+  --chip-border: #ddd8cc;}
+:root { color-scheme: dark; }
+:root[data-theme="light"] { color-scheme: light; }
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { color-scheme: light; } }
+
+.logo-light { display: none !important; }
+:root[data-theme="light"] .logo-dark { display: none !important; }
+:root[data-theme="light"] .logo-light { display: block !important; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .logo-dark { display: none !important; }
+  :root:not([data-theme="dark"]) .logo-light { display: block !important; }
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+.theme-toggle:hover { background: var(--bg-raised); }
+.theme-toggle:focus-visible { outline: 3px solid var(--green-bright); outline-offset: 3px; }
+.theme-toggle svg { width: 18px; height: 18px; fill: currentColor; }
+/* The icon shows the theme you would switch to: a sun in dark mode, a moon in light. */
+.theme-toggle .icon-moon { display: none; }
+:root[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+:root[data-theme="light"] .theme-toggle .icon-moon { display: block; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .theme-toggle .icon-sun { display: none; }
+  :root:not([data-theme="dark"]) .theme-toggle .icon-moon { display: block; }
+}
