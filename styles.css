@@ -207,23 +207,8 @@ details p { margin: 12px 0 0; color: var(--muted); }
 .policy ul { padding-left: 1.3em; margin: 0 0 1em; }
 .policy li { margin-bottom: 8px; }
 
-/* Light mode, matching the app's light background (#F7F5F0). It follows the
-   device setting unless the visitor picks a theme with the toggle. */
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-  --bg: #f7f5f0;
-  --bg-raised: #ece9e1;
-  --bg-card: #ffffff;
-  --line: #ddd8cc;
-  --text: #14171c;
-  --muted: #555c66;
-  --green-bright: #2e7d32;
-  --link-hover: #1b5e20;
-  --topbar-bg: rgba(247, 245, 240, 0.92);
-  --chip-bg: #ffffff;
-  --chip-text: #14171c;
-  --chip-border: #ddd8cc;  }
-}
+/* Light mode, matching the app's light background (#F7F5F0). The site opens
+   in dark mode; light is used only when the visitor picks it with the toggle. */
 :root[data-theme="light"] {
   --bg: #f7f5f0;
   --bg-raised: #ece9e1;
@@ -239,15 +224,10 @@ details p { margin: 12px 0 0; color: var(--muted); }
   --chip-border: #ddd8cc;}
 :root { color-scheme: dark; }
 :root[data-theme="light"] { color-scheme: light; }
-@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { color-scheme: light; } }
 
 .logo-light { display: none !important; }
 :root[data-theme="light"] .logo-dark { display: none !important; }
 :root[data-theme="light"] .logo-light { display: block !important; }
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) .logo-dark { display: none !important; }
-  :root:not([data-theme="dark"]) .logo-light { display: block !important; }
-}
 
 .theme-toggle {
   display: inline-flex;
@@ -268,7 +248,3 @@ details p { margin: 12px 0 0; color: var(--muted); }
 .theme-toggle .icon-moon { display: none; }
 :root[data-theme="light"] .theme-toggle .icon-sun { display: none; }
 :root[data-theme="light"] .theme-toggle .icon-moon { display: block; }
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) .theme-toggle .icon-sun { display: none; }
-  :root:not([data-theme="dark"]) .theme-toggle .icon-moon { display: block; }
-}

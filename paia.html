@@ -117,8 +117,7 @@
     (function () {
       var root = document.documentElement;
       var meta = document.querySelector('meta[name="theme-color"]');
-      var media = window.matchMedia("(prefers-color-scheme: light)");
-      function current() { return root.getAttribute("data-theme") || (media.matches ? "light" : "dark"); }
+      function current() { return root.getAttribute("data-theme") || "dark"; }
       function sync() {
         var light = current() === "light";
         if (meta) meta.setAttribute("content", light ? "#f7f5f0" : "#03070d");
@@ -131,7 +130,6 @@
         try { localStorage.setItem("theme", next); } catch (e) {}
         sync();
       });
-      if (media.addEventListener) media.addEventListener("change", sync);
       sync();
     })();
   </script>

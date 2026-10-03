@@ -126,8 +126,12 @@
           <p>Tell a friend from the menu: Share app opens WhatsApp with a link to download Let's Talk.</p>
         </article>
         <article class="card card-plain">
+          <h3>The app in your language</h3>
+          <p>Choose any of the 20 languages in the menu and every button and message in the app changes to it.</p>
+        </article>
+        <article class="card card-plain">
           <h3>A guide inside</h3>
-          <p>New to the app? Explore Features in the menu walks you through every button in plain words.</p>
+          <p>New to the app? Explore Features in the menu walks you through every button in plain words, in any of the 20 languages.</p>
         </article>
       </div>
     </section>
@@ -237,8 +241,7 @@
     (function () {
       var root = document.documentElement;
       var meta = document.querySelector('meta[name="theme-color"]');
-      var media = window.matchMedia("(prefers-color-scheme: light)");
-      function current() { return root.getAttribute("data-theme") || (media.matches ? "light" : "dark"); }
+      function current() { return root.getAttribute("data-theme") || "dark"; }
       function sync() {
         var light = current() === "light";
         if (meta) meta.setAttribute("content", light ? "#f7f5f0" : "#03070d");
@@ -251,7 +254,6 @@
         try { localStorage.setItem("theme", next); } catch (e) {}
         sync();
       });
-      if (media.addEventListener) media.addEventListener("change", sync);
       sync();
     })();
   </script>
