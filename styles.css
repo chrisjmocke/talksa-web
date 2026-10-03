@@ -134,6 +134,7 @@ main { padding: 0 16px; }
 
 .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; margin-top: 48px; }
 .split p { color: var(--muted); }
+.subhead { margin-top: 56px; }
 
 /* Languages */
 .list-title { margin-top: 28px; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
