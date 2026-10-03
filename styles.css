@@ -18,18 +18,27 @@
   --max: 1080px;
   /* The app's own font: Android's monospace (Droid Sans Mono, now Noto Sans Mono). */
   --font: "Noto Sans Mono", "Droid Sans Mono", ui-monospace, "Cascadia Mono", Menlo, Consolas, monospace;
+  /* The same seven shadows the app draws around its text. */
+  --app-outline: 1.5px 0 0 rgba(0, 0, 0, 0.4), -1.5px 0 0 rgba(0, 0, 0, 0.4),
+    0 1.5px 0 rgba(0, 0, 0, 0.4), 0 -1px 0 rgba(0, 0, 0, 0.3),
+    1px 1px 0 rgba(0, 0, 0, 0.33), -1px 1px 0 rgba(0, 0, 0, 0.33),
+    0 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+/* Sizes in rem follow the app: its default text is 18 px. */
+html { font-size: 18px; scroll-behavior: smooth; scroll-padding-top: 84px; }
 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
   font-family: var(--font);
-  font-size: 16px;
+  font-size: 1rem;
+  /* The app's default text: bold monospace with a thin dark outline. */
+  font-weight: 700;
+  text-shadow: var(--app-outline);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
@@ -42,7 +51,7 @@ a:hover { color: var(--link-hover); }
 h1, h2, h3 { font-family: var(--font); font-weight: 700; line-height: 1.15; margin: 0 0 0.6em; }
 h1 { font-size: clamp(1.9rem, 5.2vw, 3.4rem); letter-spacing: -0.03em; }
 h2 { font-size: clamp(1.5rem, 3.6vw, 2.2rem); letter-spacing: -0.02em; }
-h3 { font-size: 1.15rem; font-weight: 600; }
+h3 { font-size: 1.15rem; font-weight: 700; }
 p { margin: 0 0 1em; }
 
 /* Top bar */
@@ -60,7 +69,7 @@ p { margin: 0 0 1em; }
   border-bottom: 1px solid var(--line);
 }
 .topbar-logo img { width: 132px; }
-.topbar-nav { display: flex; align-items: center; gap: 22px; font-size: 0.92rem; font-weight: 500; }
+.topbar-nav { display: flex; align-items: center; gap: 22px; font-size: 0.92rem; font-weight: 700; }
 .topbar-nav a:not(.btn) { color: var(--muted); text-decoration: none; }
 .topbar-nav a:not(.btn):hover { color: var(--text); }
 
@@ -74,7 +83,7 @@ p { margin: 0 0 1em; }
   border-radius: 999px;
   background: var(--green);
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   border: 2px solid var(--green);
   transition: background 0.15s, border-color 0.15s, transform 0.15s;
@@ -100,7 +109,7 @@ main { padding: 0 16px; }
   border-radius: 999px;
   color: var(--green-bright);
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -132,10 +141,10 @@ main { padding: 0 16px; }
 .split p { color: var(--muted); }
 
 /* Languages */
-.list-title { margin-top: 28px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.list-title { margin-top: 28px; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 .chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-.chips li { padding: 10px 18px; border-radius: 999px; background: var(--chip-bg); color: var(--chip-text); border: 1px solid var(--chip-border); font-weight: 600; }
-.chips-alt li { background: transparent; color: var(--text); border: 1px solid var(--line); font-weight: 500; }
+.chips li { padding: 10px 18px; border-radius: 999px; background: var(--chip-bg); color: var(--chip-text); border: 1px solid var(--chip-border); font-weight: 700; }
+.chips-alt li { background: transparent; color: var(--text); border: 1px solid var(--line); font-weight: 700; }
 
 /* Download */
 .download { text-align: left; }
@@ -164,7 +173,7 @@ summary {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.05rem;
 }
 summary::-webkit-details-marker { display: none; }
