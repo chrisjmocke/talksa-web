@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Let's Talk | Translate and learn South African languages</title>
   <meta name="description" content="Speak, type, scan or send a voice note and hear it in another language. Let's Talk translates between all 11 official South African languages and 9 more, with natural voices and a Learn page. Free Android download.">
-  <meta name="theme-color" content="#0b0d10">
+  <meta name="theme-color" content="#03070d">
   <link rel="canonical" href="https://www.talksa.co.za/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -28,16 +28,18 @@
 </head>
 <body>
   <header class="topbar">
-    <a class="topbar-logo" href="#top" aria-label="Let's Talk home"><img class="logo-dark" src="assets/logo.png" alt="let's talk - translate and learn South Africa" width="1024" height="366"><img class="logo-light" src="assets/logo-light.png" alt="let's talk - translate and learn South Africa" width="1024" height="366"></a>
-    <nav class="topbar-nav" aria-label="Sections">
-      <a href="#features">Features</a>
-      <a href="#languages">Languages</a>
-      <a href="#credits">Credits</a>
-      <a href="#faq">Questions</a>
+    <div class="topbar-left">
       <button class="theme-toggle" type="button" aria-label="Switch between light and dark mode" title="Light or dark mode">
         <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 14.5A9 9 0 0 1 9.5 3a9 9 0 1 0 11.5 11.5Z"/></svg>
         <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0-5a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1Zm0 17a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1ZM3 11h2a1 1 0 1 1 0 2H3a1 1 0 1 1 0-2Zm16 0h2a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2ZM5.6 4.2l1.4 1.4a1 1 0 0 1-1.4 1.4L4.2 5.6a1 1 0 0 1 1.4-1.4Zm12.8 12.8 1.4 1.4a1 1 0 0 1-1.4 1.4l-1.4-1.4a1 1 0 0 1 1.4-1.4ZM4.2 18.4l1.4-1.4a1 1 0 0 1 1.4 1.4l-1.4 1.4a1 1 0 0 1-1.4-1.4ZM17 5.6l1.4-1.4a1 1 0 0 1 1.4 1.4L18.4 7A1 1 0 0 1 17 5.6Z"/></svg>
       </button>
+      <a href="#features">Features</a>
+      <a href="#languages">Languages</a>
+    </div>
+    <a class="topbar-logo" href="#top" aria-label="Let's Talk home"><img class="logo-dark" src="assets/logo.png" alt="let's talk - translate and learn South Africa" width="1024" height="366"><img class="logo-light" src="assets/logo-light.png" alt="let's talk - translate and learn South Africa" width="1024" height="366"></a>
+    <nav class="topbar-nav" aria-label="Sections">
+      <a href="#credits">Credits</a>
+      <a href="#faq">Questions</a>
       <a class="btn btn-small" href="#download">Download</a>
     </nav>
   </header>
@@ -212,7 +214,7 @@
       function current() { return root.getAttribute("data-theme") || (media.matches ? "light" : "dark"); }
       function sync() {
         var light = current() === "light";
-        if (meta) meta.setAttribute("content", light ? "#f7f5f0" : "#0b0d10");
+        if (meta) meta.setAttribute("content", light ? "#f7f5f0" : "#03070d");
         var btn = document.querySelector(".theme-toggle");
         if (btn) btn.setAttribute("aria-pressed", light ? "false" : "true");
       }
