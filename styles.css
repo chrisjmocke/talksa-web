@@ -234,8 +234,10 @@ details p { margin: 12px 0 0; color: var(--muted); }
   background: transparent;
   color: var(--text);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
-.theme-toggle:hover { color: var(--muted); }
+/* No hover colour on phones: a tap would leave it stuck. */
+@media (hover: hover) { .theme-toggle:hover { color: var(--muted); } }
 .theme-toggle:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
 .theme-toggle svg { width: 18px; height: 18px; fill: currentColor; }
 /* The icon shows the theme you would switch to: a sun in dark mode, a moon in light. */
