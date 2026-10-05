@@ -18,11 +18,6 @@
   --max: 1080px;
   /* The app's own font: Android's monospace (Droid Sans Mono, now Noto Sans Mono). */
   --font: "Noto Sans Mono", "Droid Sans Mono", ui-monospace, "Cascadia Mono", Menlo, Consolas, monospace;
-  /* The same seven shadows the app draws around its text. */
-  --app-outline: 1.5px 0 0 rgba(0, 0, 0, 0.4), -1.5px 0 0 rgba(0, 0, 0, 0.4),
-    0 1.5px 0 rgba(0, 0, 0, 0.4), 0 -1px 0 rgba(0, 0, 0, 0.3),
-    1px 1px 0 rgba(0, 0, 0, 0.33), -1px 1px 0 rgba(0, 0, 0, 0.33),
-    0 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 * { box-sizing: border-box; }
@@ -36,9 +31,8 @@ body {
   color: var(--text);
   font-family: var(--font);
   font-size: 1rem;
-  /* The app's default text: bold monospace with a thin dark outline. */
+  /* The app's default text: bold monospace, no shadow. */
   font-weight: 700;
-  text-shadow: var(--app-outline);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
