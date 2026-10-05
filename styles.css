@@ -235,8 +235,8 @@ details p { margin: 12px 0 0; color: var(--muted); }
   color: var(--text);
   cursor: pointer;
 }
-.theme-toggle:hover { color: var(--green-bright); }
-.theme-toggle:focus-visible { outline: 3px solid var(--green-bright); outline-offset: 3px; }
+.theme-toggle:hover { color: var(--muted); }
+.theme-toggle:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
 .theme-toggle svg { width: 18px; height: 18px; fill: currentColor; }
 /* The icon shows the theme you would switch to: a sun in dark mode, a moon in light. */
 .theme-toggle .icon-moon { display: none; }
