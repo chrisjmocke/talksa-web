@@ -10,7 +10,7 @@
   --green-ink: #062a09;
   --cream: #f7f5f0;
   --link-hover: #7fd682;
-  --topbar-bg: rgba(3, 7, 13, 0.92);
+  --topbar-bg: #03070d;
   --chip-bg: var(--cream);
   --chip-text: #1b1b1b;
   --chip-border: transparent;
@@ -59,7 +59,6 @@ p { margin: 0 0 1em; }
   gap: 16px;
   padding: 12px max(16px, calc((100vw - var(--max)) / 2));
   background: var(--topbar-bg);
-  backdrop-filter: blur(10px);
 }
 .topbar { position: sticky; }
 .topbar .theme-toggle, .topbar-left { justify-self: start; }
@@ -212,7 +211,7 @@ details p { margin: 12px 0 0; color: var(--muted); }
   --muted: #555c66;
   --green-bright: #2e7d32;
   --link-hover: #1b5e20;
-  --topbar-bg: rgba(247, 245, 240, 0.92);
+  --topbar-bg: #f7f5f0;
   --chip-bg: #ffffff;
   --chip-text: #14171c;
   --chip-border: #ddd8cc;}
