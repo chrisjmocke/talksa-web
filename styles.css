@@ -5,11 +5,11 @@
   --line: #262b33;
   --text: #f4f2ec;
   --muted: #a9afb8;
-  --green: #43a047;
-  --green-bright: #5cbf60;
+  --green: #17C964;
+  --green-bright: #17C964;
   --green-ink: #062a09;
   --cream: #f7f5f0;
-  --link-hover: #7fd682;
+  --link-hover: #17C964;
   --topbar-bg: #03070d;
   --chip-bg: var(--cream);
   --chip-text: #1b1b1b;
@@ -81,13 +81,13 @@ p { margin: 0 0 1em; }
   padding: 14px 24px;
   border-radius: 999px;
   background: var(--green);
-  color: #fff;
+  color: var(--green-ink);
   font-weight: 700;
   text-decoration: none;
   border: 2px solid var(--green);
   transition: background 0.15s, border-color 0.15s, transform 0.15s;
 }
-.btn:hover { background: var(--green-bright); border-color: var(--green-bright); color: #fff; transform: translateY(-1px); }
+.btn:hover { background: var(--green-bright); border-color: var(--green-bright); color: var(--green-ink); transform: translateY(-1px); }
 .btn:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid var(--green-bright); outline-offset: 3px; }
 .btn-small { padding: 8px 16px; font-size: 0.9rem; }
 .btn-large { padding: 18px 32px; font-size: 1.1rem; }
@@ -209,8 +209,8 @@ details p { margin: 12px 0 0; color: var(--muted); }
   --line: #ddd8cc;
   --text: #14171c;
   --muted: #555c66;
-  --green-bright: #2e7d32;
-  --link-hover: #1b5e20;
+  --green-bright: #17C964;
+  --link-hover: #17C964;
   --topbar-bg: #f7f5f0;
   --chip-bg: #ffffff;
   --chip-text: #14171c;

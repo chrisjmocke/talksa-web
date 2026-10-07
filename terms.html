@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+  <script>try{var t=localStorage.getItem("theme_v2");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
 </head>
 <body>
   <header class="topbar">
@@ -30,7 +30,7 @@
   <main>
     <article class="section policy">
       <h1>Terms and Conditions</h1>
-      <p class="fine">Effective 6 October 2026. Includes our <a href="#refunds">Refund Policy</a>.</p>
+      <p class="fine">Effective 7 October 2026. Includes our <a href="#refunds">Refund Policy</a>.</p>
 
       <p>These terms apply when you use the Let's Talk app or website, or buy credits. By using Let's Talk you agree to them. Please read them, especially the parts in <strong>bold</strong>, which limit our responsibility or set out your duties.</p>
 
@@ -58,7 +58,7 @@
         <li>A Talk recording is priced by the timer you choose: 5, 10 or 15 seconds costs 1, 2 or 3 credits, and recording stops when the time is up. For typed or scanned text that needs more than the timer allows, the app asks you first, and we never charge more than you accepted.</li>
         <li>If you stop a translation before it appears because your words were misheard, and send a corrected version to the same language within 10 minutes, the corrected translation is free once, provided it is about the same length and mostly the same words.</li>
         <li>Playing something again from History or Learn is free.</li>
-        <li>You receive 10 free credits once when you sign in with Google, one grant per account and per device. When you run out of credits you get 20 free text-only translations. We may change or stop these free offers.</li>
+        <li>You receive 10 free credits once when you sign in with Google, one grant per account and per device. Once your credits are used up there are no free translations; you buy credits to continue. We may change or stop the free credits.</li>
         <li><strong>Credits have no cash value.</strong> They cannot be exchanged for money, transferred to another account, or sold.</li>
         <li><strong>Credits from a once-off pack do not expire</strong> while your account exists.</li>
         <li><strong>Credits from a monthly plan expire one month after the payment that added them.</strong> Any not used by then are lost. When you translate, monthly credits are used before once-off credits.</li>
@@ -92,7 +92,7 @@
       <p>You may not:</p>
       <ul>
         <li>use Let's Talk to break the law, or to harass, threaten or harm anyone;</li>
-        <li>try to get credits, free translations or free trials you are not entitled to, for example by creating many accounts or faking devices;</li>
+        <li>try to get credits or free trials you are not entitled to, for example by creating many accounts or faking devices;</li>
         <li>copy, reverse-engineer or resell the app, or use automated tools to send it requests;</li>
         <li>interfere with our servers or other users.</li>
       </ul>
@@ -148,7 +148,7 @@
       document.querySelector(".theme-toggle").addEventListener("click", function () {
         var next = current() === "light" ? "dark" : "light";
         root.setAttribute("data-theme", next);
-        try { localStorage.setItem("theme", next); } catch (e) {}
+        try { localStorage.setItem("theme_v2", next); } catch (e) {}
         sync();
       });
       sync();
