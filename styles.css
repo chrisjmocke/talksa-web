@@ -78,7 +78,7 @@ p { margin: 0 0 1em; }
 .topbar-left a:hover { color: var(--text); }
 /* Exactly in the middle, however wide the links on the right are. */
 .topbar-logo { position: absolute; left: 50%; transform: translateX(-50%); }
-.topbar-logo img { width: 132px; }
+.topbar-logo img { width: 240px; }
 /* Until the official launch the site and app are a beta. */
 .beta-tag {
   position: absolute;
@@ -203,7 +203,14 @@ details p { margin: 12px 0 0; color: var(--muted); }
 .footer p { margin: 0 0 6px; }
 
 /* Below this width the section links would run into the logo. */
+/* Desktop: a big logo, centred in a taller top bar. */
+@media (min-width: 961px) {
+  .topbar { min-height: 120px; }
+  .topbar-logo { top: 50%; transform: translate(-50%, -50%); }
+}
+
 @media (max-width: 960px) {
+  .topbar-logo img { width: 170px; }
   .topbar-left a, .topbar-nav a:not(.btn) { display: none; }
 }
 
