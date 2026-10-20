@@ -79,6 +79,21 @@ p { margin: 0 0 1em; }
 /* Exactly in the middle, however wide the links on the right are. */
 .topbar-logo { position: absolute; left: 50%; transform: translateX(-50%); }
 .topbar-logo img { width: 132px; }
+/* Until the official launch the site and app are a beta. */
+.beta-tag {
+  position: absolute;
+  left: calc(100% + 4px);
+  top: 6px;
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--green);
+  color: var(--green-ink);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
 .topbar-nav { justify-self: end; display: flex; align-items: center; gap: 22px; font-size: 0.92rem; font-weight: 700; }
 .topbar-nav a:not(.btn) { color: var(--muted); text-decoration: none; }
 .topbar-nav a:not(.btn):hover { color: var(--text); }
