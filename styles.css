@@ -99,25 +99,32 @@ p { margin: 0 0 1em; }
 .topbar-nav a:not(.btn):hover { color: var(--text); }
 
 /* Buttons */
+/* Slim, squared-off tags in the app's own style (like the BETA tag):
+   small capitals, wide letter spacing, a light corner radius. */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 14px 24px;
-  border-radius: 999px;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: 8px;
   background: var(--green);
   color: var(--green-ink);
+  font-size: 0.82rem;
   font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
   text-decoration: none;
-  border: 2px solid var(--green);
+  border: 1.5px solid var(--green);
   transition: background 0.15s, border-color 0.15s, transform 0.15s;
 }
+.btn svg { width: 15px; height: 15px; }
 .btn:hover { background: var(--green-bright); border-color: var(--green-bright); color: var(--green-ink); transform: translateY(-1px); }
 .btn:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid var(--green-bright); outline-offset: 3px; }
-.btn-small { padding: 8px 16px; font-size: 0.9rem; }
-.btn-large { padding: 18px 32px; font-size: 1.1rem; }
-.btn-ghost { background: transparent; color: var(--text); border-color: transparent; }
+.btn-small { padding: 6px 12px; font-size: 0.74rem; border-radius: 6px; }
+.btn-large { padding: 12px 24px; font-size: 0.92rem; }
+.btn-ghost { background: transparent; color: var(--text); border-color: transparent; text-transform: none; letter-spacing: 0; font-size: 0.95rem; }
 .btn-ghost:hover { background: transparent; border-color: transparent; color: var(--green-bright); }
 
 /* Layout */
@@ -218,7 +225,7 @@ details p { margin: 12px 0 0; color: var(--muted); }
   .topbar-logo img { width: 112px; }
   /* Phones: the tag sits left of the logo, between it and the light/dark switch. */
   .beta-tag { left: auto; right: calc(100% + 6px); top: 50%; transform: translateY(-50%); }
-  .btn-large { width: 100%; }
+  .btn-large { width: auto; }
 }
 
 @media (prefers-reduced-motion: reduce) {
