@@ -181,7 +181,7 @@
       <h2>Download Let's Talk</h2>
       <p class="section-lead">For Android 7.0 or newer (no iPhone version yet). The app is free to download; it needs an internet connection to translate.</p>
       <div class="download-box">
-        <a class="btn btn-large" href="https://github.com/chrisjmocke/letstalk-app/releases/latest/download/lets-talk.apk">
+        <a class="btn btn-large" id="apk-button" href="https://github.com/chrisjmocke/letstalk-app/releases/latest/download/lets-talk.apk">
           <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 3a1 1 0 0 1 1 1v9.59l3.3-3.3a1 1 0 1 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.42l3.3 3.3V4a1 1 0 0 1 1-1Zm-7 15a1 1 0 0 1 1 1v1h12v-1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1Z"/></svg>
           Download the APK
         </a>
@@ -246,7 +246,40 @@
     <p class="fine">&copy; 2026 LETS TALK SA (Pty) Ltd. All rights reserved. Made in South Africa.</p>
     <p class="fine">Official terms from the translations of the Constitution of South Africa and the <a href="https://huggingface.co/datasets/dsfsi/vukuzenzele-sentence-aligned">Vuk'uzenzele corpus</a> (DSFSI, University of Pretoria; GCIS) and the <a href="https://hdl.handle.net/20.500.12185/544">COVID-19 Multilingual Terminology</a> (City of Tshwane, SADiLaR, PanSALB), <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; and the <a href="https://hdl.handle.net/20.500.12185/409">Autshumato phrase translations</a> (CTexT, North-West University; Department of Arts and Culture), <a href="https://creativecommons.org/licenses/by/2.5/za/">CC BY 2.5 ZA</a>. Full list in our <a href="terms.html">Terms</a>.</p>
   </footer>
+  <dialog id="install-guide" aria-labelledby="install-title">
+    <form method="dialog" class="guide-close"><button aria-label="Close">&times;</button></form>
+    <h2 id="install-title">Install Let's Talk in 4 steps</h2>
+    <p class="guide-lead">Let's Talk isn't on Google Play yet, so Android shows a few extra prompts. They are normal. This takes about a minute.</p>
+    <ol class="steps guide-steps">
+      <li><strong>Download.</strong> Tap the green button below. If Chrome says "This type of file can harm your device", tap <strong>Download anyway</strong>. Every Android browser says this for any app outside Google Play.</li>
+      <li><strong>Open the file.</strong> Tap <strong>Open</strong> when the download finishes, or find <em>lets-talk.apk</em> in your Downloads folder.</li>
+      <li><strong>Allow the install.</strong> If Android says your browser isn't allowed to install apps, tap <strong>Settings</strong>, switch on <strong>Allow from this source</strong>, then press back. You can switch it off again afterwards.</li>
+      <li><strong>Install.</strong> Tap <strong>Install</strong>. If Google Play Protect says it hasn't seen the app before, tap <strong>More details</strong>, then <strong>Install anyway</strong>. Then open Let's Talk and allow the microphone.</li>
+    </ol>
+    <div class="guide-safe">
+      <strong>Is it safe?</strong> The file comes straight from our official GitHub releases page, and every version is signed by us. We never ask for your bank card, ID number or password to install it. If anything on your phone looks different from the steps above, stop and <a href="mailto:letstalktranslate@gmail.com">email us</a> before you continue.
+    </div>
+    <div class="guide-actions">
+      <a class="btn btn-large" id="apk-start" href="https://github.com/chrisjmocke/letstalk-app/releases/latest/download/lets-talk.apk">Download the APK</a>
+      <p class="guide-started" id="apk-started" hidden>Download started. Follow steps 2 to 4 when it finishes. Reading this on a computer? Open this page on your phone, or send the link to it.</p>
+    </div>
+  </dialog>
   <script>
+    (function () {
+      var guide = document.getElementById("install-guide");
+      var open = document.getElementById("apk-button");
+      var start = document.getElementById("apk-start");
+      var started = document.getElementById("apk-started");
+      if (guide && guide.showModal && open) {
+        open.addEventListener("click", function (e) {
+          e.preventDefault();
+          started.hidden = true;
+          guide.showModal();
+        });
+        start.addEventListener("click", function () { started.hidden = false; });
+        guide.addEventListener("click", function (e) { if (e.target === guide) guide.close(); });
+      }
+    })();
     (function () {
       var root = document.documentElement;
       var meta = document.querySelector('meta[name="theme-color"]');
